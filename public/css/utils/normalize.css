@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #FAFAFA;
+}
+
+p {
+  color: #8E8EAB;
+}
+
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #FAFAFA;
+  border-bottom: 1px solid #DBDBDB;
+}
+header section {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  color: white;
+  background-color: #0095F6;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #0095F6;
+}
+a:hover {
+  color: #B2DFFC;
+}
+
+form {
+  padding: 1rem;
+  background-color: #FFFFFF;
+  border: 1px solid #DBDBDB;
+  min-height: 50%;
+  display: grid;
+  gap: 1rem;
+  width: 30%;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+form input {
+  outline: none;
+  padding: 0.5rem;
+  border: 1px solid #DBDBDB;
+}
+form input:focus {
+  border: 1px solid black;
+}
+
+/*# sourceMappingURL=normalize.css.map */
