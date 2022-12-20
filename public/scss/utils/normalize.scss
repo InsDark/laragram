@@ -57,4 +57,9 @@ form{
             border: 1px solid black;
         }
     }
+    input[type='submit'] {
+        cursor: pointer;
+        background-color: $bg-blue;
+        color: $bg-color;
+    }
 }

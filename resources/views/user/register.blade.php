@@ -23,11 +23,14 @@
             <label for="surname">Surname:</label>
             <input name='surname' type="text">
             
+            <label for="nickname">Nickname:</label>
+            <input name='nickname' type="text">
+
             <label for="picture">Profile Picture:</label>
             <input name='picture' type="file">
 
-            <label for="nickname">Email:</label>
-            <input name='nickname' type="text">
+            <label for="email">Email:</label>
+            <input name='email' type="text">
 
             <label for="password">Password:</label>
             <input name='password' type="password">

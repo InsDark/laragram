@@ -18,7 +18,7 @@ header {
   justify-content: space-around;
   align-items: center;
   background-color: #FAFAFA;
-  border-bottom: 1px solid #DBDBDB;
+  border-bottom: 1px solid rgb(219, 219, 219);
 }
 header section {
   display: flex;
@@ -45,7 +45,7 @@ a:hover {
 form {
   padding: 1rem;
   background-color: #FFFFFF;
-  border: 1px solid #DBDBDB;
+  border: 1px solid rgb(219, 219, 219);
   min-height: 50%;
   display: grid;
   gap: 1rem;
@@ -56,10 +56,15 @@ form {
 form input {
   outline: none;
   padding: 0.5rem;
-  border: 1px solid #DBDBDB;
+  border: 1px solid rgb(219, 219, 219);
 }
 form input:focus {
   border: 1px solid black;
+}
+form input[type=submit] {
+  cursor: pointer;
+  background-color: #0095F6;
+  color: #FFFFFF;
 }
 
 /*# sourceMappingURL=normalize.css.map */

@@ -1,10 +1,11 @@
 body {
   flex-direction: column;
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 main {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -45,7 +46,203 @@ main {
   color: #8E8EAB;
 }
 #register form button {
-  grid-area: 8/1/9/3;
+  grid-area: 9/1/10/3;
+}
+
+#dashboard .picture-container {
+  width: 45%;
+  border: 1px solid rgb(219, 219, 219);
+}
+#dashboard .picture-container .maker {
+  display: flex;
+  background-color: rgba(219, 219, 219, 0.3);
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+#dashboard .picture-container .picture img {
+  width: 100%;
+  height: auto;
+}
+#dashboard .picture-container .picture-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+#dashboard .picture-container .picture-details p {
+  color: black;
+}
+#dashboard .picture-container .picture-details div {
+  display: flex;
+  gap: 1rem;
+}
+
+#post .picture-container {
+  width: 55%;
+  border: 1px solid rgb(219, 219, 219);
+}
+#post .picture-container .maker {
+  display: flex;
+  background-color: rgba(219, 219, 219, 0.3);
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+#post .picture-container img {
+  width: 100%;
+  height: auto;
+}
+#post .picture-container .picture-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+#post .picture-container .picture-details p {
+  color: black;
+}
+#post .picture-container .picture-details div {
+  display: flex;
+  gap: 1rem;
+}
+
+#profile section:nth-child(1) {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+#profile section:nth-child(1) .avatar {
+  width: 15rem;
+  height: 15rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+#profile section:nth-child(1) .avatar img {
+  width: 100%;
+  min-height: 15rem;
+}
+#profile hr {
+  width: 50%;
+  height: auto;
+}
+#profile section:nth-child(3) {
+  width: 40%;
+  height: auto;
+  gap: 1rem;
+  display: inherit;
+  flex-direction: column;
+}
+#profile section:nth-child(3) .picture {
+  display: grid;
+  border: 1px solid rgb(219, 219, 219);
+  background-color: #FFFFFF;
+  width: 100%;
+}
+#profile section:nth-child(3) .picture img {
+  width: 100%;
+  height: auto;
+}
+#profile section:nth-child(3) .picture .picture-details {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#profile section:nth-child(3) .picture .picture-details .fa-heart {
+  color: red;
+}
+#profile section:nth-child(3) .picture .picture-details a {
+  cursor: pointer;
+  color: black;
+}
+#profile section:nth-child(3) .picture .picture-details .fa-comment {
+  color: green;
+}
+
+#uploader {
+  height: 100%;
+}
+#uploader h1 {
+  grid-area: 1/1/2/3;
+  text-align: center;
+}
+#uploader input[type=submit] {
+  grid-area: 4/1/5/3;
+}
+
+#people {
+  width: 45%;
+  display: inherit;
+  flex-direction: column;
+  gap: 1rem;
+}
+#people h1 {
+  text-align: center;
+}
+#people .user-container {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid rgb(219, 219, 219);
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+}
+#people .user-container .avatar {
+  width: 12rem;
+  height: 12rem;
+  overflow: hidden;
+  background-position: center center;
+  border-radius: 50%;
+}
+#people .user-container .avatar img {
+  width: 100%;
+  min-height: 14rem;
+}
+#people .user-container .user-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+#people .user-container .user-details a {
+  font-size: 1.5rem;
+}
+
+#favorites {
+  width: 40%;
+  display: inherit;
+  flex-direction: column;
+}
+#favorites hr {
+  width: 100%;
+}
+#favorites .picture {
+  display: grid;
+  border: 1px solid rgb(219, 219, 219);
+  background-color: #FFFFFF;
+  width: 100%;
+}
+#favorites .picture img {
+  width: 100%;
+  height: auto;
+}
+#favorites .picture .picture-details {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#favorites .picture .picture-details .fa-heart {
+  color: red;
+}
+#favorites .picture .picture-details a {
+  cursor: pointer;
+  color: black;
+}
+#favorites .picture .picture-details .fa-comment {
+  color: green;
 }
 
 /*# sourceMappingURL=index.css.map */
