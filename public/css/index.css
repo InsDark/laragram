@@ -129,37 +129,35 @@ main {
   height: auto;
 }
 #profile section:nth-child(3) {
-  width: 40%;
-  height: auto;
-  gap: 1rem;
-  display: inherit;
-  flex-direction: column;
+  width: 45%;
 }
-#profile section:nth-child(3) .picture {
-  display: grid;
+#profile section:nth-child(3) .picture-container {
+  width: 100%;
   border: 1px solid rgb(219, 219, 219);
-  background-color: #FFFFFF;
-  width: 100%;
 }
-#profile section:nth-child(3) .picture img {
+#profile section:nth-child(3) .picture-container .maker {
+  display: flex;
+  background-color: rgba(219, 219, 219, 0.3);
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+#profile section:nth-child(3) .picture-container .picture img {
   width: 100%;
   height: auto;
 }
-#profile section:nth-child(3) .picture .picture-details {
+#profile section:nth-child(3) .picture-container .picture-details {
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   padding: 1rem;
-  align-items: center;
-  justify-content: space-evenly;
 }
-#profile section:nth-child(3) .picture .picture-details .fa-heart {
-  color: red;
-}
-#profile section:nth-child(3) .picture .picture-details a {
-  cursor: pointer;
+#profile section:nth-child(3) .picture-container .picture-details p {
   color: black;
 }
-#profile section:nth-child(3) .picture .picture-details .fa-comment {
-  color: green;
+#profile section:nth-child(3) .picture-container .picture-details div {
+  display: flex;
+  gap: 1rem;
 }
 
 #uploader {
@@ -211,38 +209,40 @@ main {
 }
 
 #favorites {
-  width: 40%;
+  width: 100%;
   display: inherit;
   flex-direction: column;
 }
 #favorites hr {
-  width: 100%;
+  width: 45%;
 }
-#favorites .picture {
-  display: grid;
+#favorites .picture-container {
+  width: 45%;
   border: 1px solid rgb(219, 219, 219);
-  background-color: #FFFFFF;
-  width: 100%;
 }
-#favorites .picture img {
+#favorites .picture-container .maker {
+  display: flex;
+  background-color: rgba(219, 219, 219, 0.3);
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+#favorites .picture-container .picture img {
   width: 100%;
   height: auto;
 }
-#favorites .picture .picture-details {
+#favorites .picture-container .picture-details {
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   padding: 1rem;
-  align-items: center;
-  justify-content: space-evenly;
 }
-#favorites .picture .picture-details .fa-heart {
-  color: red;
-}
-#favorites .picture .picture-details a {
-  cursor: pointer;
+#favorites .picture-container .picture-details p {
   color: black;
 }
-#favorites .picture .picture-details .fa-comment {
-  color: green;
+#favorites .picture-container .picture-details div {
+  display: flex;
+  gap: 1rem;
 }
 
 /*# sourceMappingURL=index.css.map */

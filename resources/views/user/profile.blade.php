@@ -26,26 +26,22 @@
         <section>
             @if(count($images) > 0)
                 @foreach ($images as $image) 
-                <div class = 'picture'>
-                    <a href="">
-                        <img src="{{
-                            asset(Storage::url($image->image_path))
-                        }}" alt="{{$image->name}}">
-                    </a>
-                    <div class='picture-details'>
-                        <h3>{{$image->description}}</h3>
-                        <span><i class="fa-solid fa-comment"></i> {{count($image->comments)}}</span>
-
-                        <a href="{{action([UserController::class, 'like'], ['id' => $image->id])}}">
-                            @if($self_like)
-                                <i class="fa-solid fa-heart"></i> 
-                                @else
-                                <i class="fa-regular fa-heart"></i> 
-                            @endif
-                            {{count($image->likes)}}
-                        </a>
+                <div class='picture-container'>
+                <div class="maker">
+                    <h2>{{'@' . $image->user->nickname}}</h2>
+                    <span>|</span>
+                    <span>{{$image->user->name . ' ' . $image->user->surname}}</span>
+                </div>
+                <a href="{{route('post', ['id' => $image->id])}}" class='picture'>
+                    <img loading="lazy" src="{{asset(Storage::url($image->image_path))}}" alt="{{$image->description}}">
+                </a>
+                <div class="picture-details">
+                    <p>{{$image->description}}</p>
+                    <div >
+                        <span>{{count($image->comments)}}</span><a href="{{action([UserController::class, 'like'], ['id' => $image->id])}}">{{count($image->likes)}}</a>
                     </div>
                 </div>
+            </div>
                 @endforeach
             @else 
                     @if ($user_id == session('identity')->id)

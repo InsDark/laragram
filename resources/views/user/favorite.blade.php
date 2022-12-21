@@ -16,22 +16,22 @@
         <h1>My favorite images</h1>
         <hr/>
         @foreach($favorites as $favorite)
-        <div class = 'picture'>
-                    <a href="">
-                        <img src="{{
-                            asset(Storage::url($favorite->image->image_path))
-                        }}" alt="{{$favorite->image->name}}">
-                    </a>
-                    <div class='picture-details'>
-                        <h3>{{$favorite->image->description}}</h3>
-                        <span><i class="fa-solid fa-comment"></i> {{count($favorite->image->comments)}}</span>
-
-                        <a href="{{action([UserController::class, 'like'], ['id' => $favorite->image->id])}}">
-                                <i class="fa-regular fa-heart"></i> 
-                            {{count($favorite->image->likes)}}
-                        </a>
+            <div class='picture-container'>
+                <div class="maker">
+                    <h2>{{'@' . $favorite->image->user->nickname}}</h2>
+                    <span>|</span>
+                    <span>{{$favorite->image->user->name . ' ' . $favorite->image->user->surname}}</span>
+                </div>
+                <a href="{{route('post', ['id' => $favorite->image->id])}}" class='picture'>
+                    <img loading="lazy" src="{{asset(Storage::url($favorite->image->image_path))}}" alt="{{$favorite->description}}">
+                </a>
+                <div class="picture-details">
+                    <p>{{$favorite->image->description}}</p>
+                    <div >
+                        <span>{{count($favorite->image->comments)}}</span><a href="{{action([UserController::class, 'like'], ['id' => $favorite->image->id])}}">{{count($favorite->image->likes)}}</a>
                     </div>
                 </div>
+            </div>
         @endforeach
     </main>
 </body>

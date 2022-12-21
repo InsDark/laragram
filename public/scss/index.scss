@@ -146,34 +146,35 @@ main{
         height: auto;
     }
     section:nth-child(3)  {
-        width: 40%;
-        height: auto;
-        gap: 1rem;
-        display: inherit;
-        flex-direction: column;
-        .picture{
-            display: grid;
-            border: 1px solid $border-color;
-            background-color: $bg-color;
+        width: 45%;
+        .picture-container {
             width: 100%;
-            img{
-                width: 100%;
-                height: auto;
+            border: 1px solid $border-color;
+            .maker{
+                display: flex;
+                background-color:rgba(219, 219, 219, 0.3);
+                align-items: center;
+                gap: 1rem;
+                padding: .5rem
+            }
+            .picture{
+                img{
+                    width: 100%;
+                    height: auto;
+    
+                }
             }
             .picture-details{
                 display: flex;
+                flex-direction: column;
+                gap: .5rem;
                 padding: 1rem;
-                align-items: center;
-                justify-content: space-evenly;
-                .fa-heart{
-                        color: red;
-                }
-                a{
-                    cursor: pointer;
+                p{
                     color: black;
                 }
-                .fa-comment{
-                    color: green;
+                div{
+                    display: flex; 
+                    gap: 1rem;
                 }
             }
         }
@@ -229,35 +230,40 @@ main{
 }
 
 #favorites {
-    width: 40% ;
+    width: 100% ;
     display: inherit;
     flex-direction: column;
     hr{
-        width: 100%;
+        width: 45%;
     }
-    .picture{
-        display: grid;
+    .picture-container {
+        width: 45%;
         border: 1px solid $border-color;
-        background-color: $bg-color;
-        width: 100%;
-        img{
-            width: 100%;
-            height: auto;
+        .maker{
+            display: flex;
+            background-color:rgba(219, 219, 219, 0.3);
+            align-items: center;
+            gap: 1rem;
+            padding: .5rem
+        }
+        .picture{
+            img{
+                width: 100%;
+                height: auto;
+
+            }
         }
         .picture-details{
             display: flex;
+            flex-direction: column;
+            gap: .5rem;
             padding: 1rem;
-            align-items: center;
-            justify-content: space-evenly;
-            .fa-heart{
-                    color: red;
-            }
-            a{
-                cursor: pointer;
+            p{
                 color: black;
             }
-            .fa-comment{
-                color: green;
+            div{
+                display: flex; 
+                gap: 1rem;
             }
         }
     }
