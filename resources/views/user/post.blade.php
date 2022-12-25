@@ -21,14 +21,24 @@
                 <span>{{$photo->user->name . ' ' . $photo->user->surname}}</span>
             </div>
             <img src="{{asset(Storage::url($photo->image_path))}}" alt="{{$photo->description}}">
-            <div class='picture-details'>
-                <p>{{$photo->description}}</p>
-                <div>
-
-                    <span>{{count($photo->comments)}}</span>
-                    <a href="{{action([UserController::class, 'like'], ['id' => $photo->id])}}">{{count($photo->likes)}}</a>
+            <div class="picture-details">
+                    <p>{{$photo->description}}</p>
+                    <div >
+                        <span class='fa-regular fa-comment'> {{count($photo->comments)}}</span>
+                        
+                        <a href="{{action([UserController::class, 'like'], ['id' => $photo->id])}}">
+                            <?php 
+                                $user = new UserController();
+                                $selfLike = $user->getSelfLike($photo->id);
+                            ?>
+                            @if($selfLike)
+                                <span class='fa-solid fa-heart'></span>
+                            @else
+                                <span class='fa-regular fa-heart'></span>
+                            @endif
+                            {{count($photo->likes)}}</a>
+                    </div>
                 </div>
-            </div>
         </div>
         <div class="comments">
             @if (count($photo->comments) == 0) 
@@ -38,5 +48,7 @@
             @endif
         </div>
     </main>
+    <script src="https://kit.fontawesome.com/b8ffa0db99.js" crossorigin="anonymous"></script>
+
 </body>
 </html>

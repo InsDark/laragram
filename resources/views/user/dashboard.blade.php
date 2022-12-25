@@ -27,11 +27,24 @@
                 <div class="picture-details">
                     <p>{{$image->description}}</p>
                     <div >
-                        <span>{{count($image->comments)}}</span><a href="{{action([UserController::class, 'like'], ['id' => $image->id])}}">{{count($image->likes)}}</a>
+                        <span class='fa-regular fa-comment'> {{count($image->comments)}}</span>
+                        
+                        <a href="{{action([UserController::class, 'like'], ['id' => $image->id])}}">
+                            <?php 
+                                $user = new UserController();
+                                $selfLike = $user->getSelfLike($image->id);
+                            ?>
+                            @if($selfLike)
+                                <span class='fa-solid fa-heart'></span>
+                            @else
+                                <span class='fa-regular fa-heart'></span>
+                            @endif
+                            {{count($image->likes)}}</a>
                     </div>
                 </div>
             </div>
         @endforeach
     </main>
+    <script src="https://kit.fontawesome.com/b8ffa0db99.js" crossorigin="anonymous"></script>
 </body>
 </html>

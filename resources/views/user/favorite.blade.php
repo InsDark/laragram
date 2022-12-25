@@ -26,13 +26,26 @@
                     <img loading="lazy" src="{{asset(Storage::url($favorite->image->image_path))}}" alt="{{$favorite->description}}">
                 </a>
                 <div class="picture-details">
-                    <p>{{$favorite->image->description}}</p>
+                    <p>{{$favorite->description}}</p>
                     <div >
-                        <span>{{count($favorite->image->comments)}}</span><a href="{{action([UserController::class, 'like'], ['id' => $favorite->image->id])}}">{{count($favorite->image->likes)}}</a>
+                        <span class='fa-regular fa-comment'> {{count($favorite->image->comments)}}</span>
+                        
+                        <a href="{{action([UserController::class, 'like'], ['id' => $favorite->image->id])}}">
+                            <?php 
+                                $user = new UserController();
+                                $selfLike = $user->getSelfLike($favorite->image->id);
+                            ?>
+                            @if($selfLike)
+                                <span class='fa-solid fa-heart'></span>
+                            @else
+                                <span class='fa-regular fa-heart'></span>
+                            @endif
+                            {{count($favorite->image->likes)}}</a>
                     </div>
                 </div>
             </div>
         @endforeach
     </main>
+    <script src="https://kit.fontawesome.com/b8ffa0db99.js" crossorigin="anonymous"></script>
 </body>
 </html>

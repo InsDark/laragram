@@ -77,7 +77,10 @@ class UserController extends Controller
         ]);
         return redirect('dashboard');
     }
-
+    public function getSelfLike($image_id) {
+        $selfLike = DB::table('likes')->where('image_id', $image_id)->where('user_id', session('identity')->id)->first();
+        return $selfLike;
+    }
     public function users() {
         $users = User::where('id', '<>', session('identity')->id)->get();
         return view('user.people', ['users' => $users]);
